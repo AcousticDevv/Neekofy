@@ -1,0 +1,93 @@
+<!--
+ ~ Copyright (c) 2022 AnsweredDev.
+ ~
+ ~ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ ~ documentation files (the "Software"), to deal n the Software without restriction, including without limitation
+ ~ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  copies of the Software, and
+ ~ to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ ~
+ ~ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ ~
+ ~ HE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neekofy Wizard</title>
+
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Neeokofy Wizard</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Short urls for you!</p>
+        </div>
+        <form action="#" th:action="@{/u/add-url}" th:object="${url}" method="post">
+            <div class="errors">
+                <div th:if="${#fields.hasErrors('id')}" class="error-invalid-id">
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        Invalid id/short name
+                    </div>
+                    <div class="border border-t-0 border-red-400 rounded-b px-4 py-3 text-gray-100">
+                        <p>The id/short name is invalid or not provided</p>
+                    </div>
+                </div>
+                <div th:if="${#fields.hasErrors('redirectUrl')}" class="error-invalid-redirectUrl">
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        Invalid redirect url
+                    </div>
+                    <div class="border border-t-0 border-red-400 rounded-b px-4 py-3 text-gray-100">
+                        <p>The redirect url is invalid or not provided</p>
+                    </div>
+                </div>
+                <div th:if="${additionalErrorLog}" class="error-others">
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        <p>Error</p>
+                    </div>
+                    <div class="border border-t-0 border-red-400 rounded-b px-4 py-3 text-gray-100">
+                        <p th:text="${additionalErrorLog}"></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+                <div class="relative sm:mb-0 flex-grow w-full">
+                    <label for="short-name" class="leading-7 text-sm text-gray-400">Short name</label>
+                    <input type="text" placeholder="A short name for your url" id="short-name" th:field="*{url.id}" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:ring-2 focus:ring-pink-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="relative sm:mb-0 flex-grow w-full">
+                    <label for="redirectUrl" class="leading-7 text-sm text-gray-400">Redirect Url</label>
+                    <input type="text" placeholder="Target url" id="redirectUrl" th:field="*{url.redirectUrl}" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:ring-2 focus:ring-pink-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <button type="submit" class="text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">Shortify</button>
+            </div>
+        </form>
+    </div>
+</section>
+    </div>
+</section>
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+            <p class="leading-relaxed text-lg">
+                The urls are saved using MongoDB database. The urls you add can be accessed by adding <span class="text-pink-600">/u/</span> before your url id or short name.
+            </p>
+            <span class="inline-block h-1 w-10 rounded bg-pink-500 mt-8 mb-6"></span>
+            <h2 class="text-white font-medium title-font tracking-wider text-sm">Links</h2>
+            <p>
+                <a class="text-gray-500" th:href="@{/u/source}">GitHub Repository</a>
+            </p>
+
+        </div>
+    </div>
+</section>
+</body>
+</html>
