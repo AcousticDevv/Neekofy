@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 AnsweredDev.
+ * Copyright (c) 2023 AcousticDevv.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal n the Software without restriction, including without limitation
@@ -16,16 +16,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.github.AnsweredDev.Neekofy;
+package com.github.AcousticDevv.Neekofy;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-class NeekofyApplicationTests {
+@SpringBootApplication
+public class NeekofyApplication {
 
-	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+		SpringApplication.run(NeekofyApplication.class, args);
 	}
 
 }

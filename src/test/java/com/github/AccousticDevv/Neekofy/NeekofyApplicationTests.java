@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 AzyncDev.
+ * Copyright (c) 2023 AcousticDevv.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal n the Software without restriction, including without limitation
@@ -15,40 +15,17 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.github.AzyncDev.Neekofy.model;
 
-import jakarta.validation.constraints.Max;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.github.AcousticDevv.Neekofy;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@Document(collection = "urls")
-public class Url {
-    @Id
-    @Max(value = 7)
-    private String id;
-    private String redirectUrl;
+@SpringBootTest
+class NeekofyApplicationTests {
 
+	@Test
+	void contextLoads() {
+	}
 
-    public Url(String id, String redirectUrl) {
-        this.id = id;
-        this.redirectUrl = redirectUrl;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getRedirectUrl() {
-        return redirectUrl;
-    }
-
-    public void setRedirectUrl(String redirectUrl) {
-        this.redirectUrl = redirectUrl;
-    }
 }

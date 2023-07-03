@@ -8,7 +8,7 @@
 		<version>3.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.github.AzyncDev</groupId>
+	<groupId>com.github.AcousticDevv</groupId>
 	<artifactId>Neekofy</artifactId>
 	<version>1.0</version>
 	<name>Neekofy</name>

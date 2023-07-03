@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 AnsweredDev.
+ * Copyright (c) 2023 AcouticDevv.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal n the Software without restriction, including without limitation
@@ -15,17 +15,18 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+package com.github.AcousticDevv.Neekofy.controller;
 
-package com.github.AnsweredDev.Neekofy;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.github.AcousticDevv.Neekofy.model.Url;
 
-@SpringBootApplication
-public class NeekofyApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(NeekofyApplication.class, args);
-	}
-
+@Controller
+public class HomeController {
+    @GetMapping("/")
+    public String getHomeView(Url url) {
+        return "index";
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 AzyncDev.
+ * Copyright (c) 2023 AcousticDevv.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal n the Software without restriction, including without limitation
@@ -15,18 +15,10 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.github.AzyncDev.Neekofy.controller;
+package com.github.AcousticDevv.Neekofy.repository;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.github.AcousticDevv.Neekofy.model.Url;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.github.AzyncDev.Neekofy.model.Url;
-
-@Controller
-public class HomeController {
-    @GetMapping("/")
-    public String getHomeView(Url url) {
-        return "index";
-    }
+public interface UrlRepository extends MongoRepository<Url, String> {
 }

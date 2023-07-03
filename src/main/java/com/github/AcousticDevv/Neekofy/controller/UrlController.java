@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 AzyncDev.
+ * Copyright (c) 2023 AcousticDevv.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal n the Software without restriction, including without limitation
@@ -16,10 +16,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.github.AzyncDev.Neekofy.controller;
+package com.github.AcousticDevv.Neekofy.controller;
 
-import com.github.AzyncDev.Neekofy.model.Url;
-import com.github.AzyncDev.Neekofy.repository.UrlRepository;
+import com.github.AcousticDevv.Neekofy.model.Url;
+import com.github.AcousticDevv.Neekofy.repository.UrlRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
